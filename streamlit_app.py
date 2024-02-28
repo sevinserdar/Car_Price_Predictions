@@ -14,7 +14,7 @@ st.subheader("This is a car predictions app")
 
 # Display Images
 
-st.image("slideshow-564.jpg", caption="Kirmizi Araba", width=400)
+st.image("slideshow-564.jpg", caption="Car", width=400)
 
 
 st.write("İlgilendiğiniz aracın tahmini piyasa değerini aşağıda görebilirsiniz.")
@@ -78,10 +78,17 @@ scaler = joblib.load(open("scaler.joblib","rb"))
 model = joblib.load(open("xgb_model.joblib","rb"))
 df_s = scaler.transform(df_s)
 
-if st.button("Make Predict"):
+# if st.button("Make Predict"):
+#     pred_price = round(model.predict(df_s)[0] * 10_000)
+#     st.write(f"Your car's price: ${pred_price}")
+
+
+
+# Create a simple button that does nothing
+st.button("Click me for no reason")
+
+# Create a button, that when clicked, shows a text
+if(st.button("About")):
     pred_price = round(model.predict(df_s)[0] * 10_000)
-    st.write(f"Your car's price: ${pred_price}")
-
-
-
+st.text(f"Your car's price: ${pred_price}")
 
