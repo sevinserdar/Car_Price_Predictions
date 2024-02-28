@@ -18,4 +18,4 @@ img = Image.open("slideshow-564.jpg")
 
 # display image using streamlit
 # width is used to set the width of an image
-st.image(img, width=200)
+st.image(img, width=500)
